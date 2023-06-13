@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.withpuppy.magicCode.common.Command;
 import com.withpuppy.magicCode.main.MainCommand;
+import com.withpuppy.magicCode.member.command.MemberLogin;
+import com.withpuppy.magicCode.member.command.MemberLoginForm;
+import com.withpuppy.magicCode.member.command.MemberMyPageForm;
 
 /**
  * Servlet implementation class FrontController
@@ -36,6 +39,10 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// 초기화
 		map.put("/main.do", new MainCommand()); // 메인 페이지 호출
+		map.put("/memberLoginForm.do", new MemberLoginForm());
+		map.put("/memberLogin.do", new MemberLogin());
+		map.put("/memberMyPageForm.do", new MemberMyPageForm());
+		map.put("/sitterApplyAllListForm.do", new SitterApplyAllListForm());
 	}
 
 	/**
